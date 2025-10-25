@@ -1,11 +1,12 @@
 import { PrismaClient } from "@prisma/client";
+import { execSync } from "child_process";
 
-const globalForPrisma = global as unknown as { prisma: PrismaClient };
+// Si no existe el cliente generado, lo generamos en runtime
+try {
+  require.resolve(".prisma/client");
+} catch (e) {
+  console.log("🧩 Generando cliente Prisma en runtime...");
+  execSync("npx prisma generate", { stdio: "inherit" });
+}
 
-export const prisma =
-  globalForPrisma.prisma ||
-  new PrismaClient({
-    log: ["error", "warn"],
-  });
-
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+export const prisma = new PrismaClient();
