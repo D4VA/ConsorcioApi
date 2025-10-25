@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { createOrder } from "../services/createrOrder";
-import { getOrders } from "../services/getOrder";
-import { prisma } from "../../config/db";
+import { createOrder } from "../services/createrOrder.js";
+import { getOrders } from "../services/getOrder.js";
+import { prisma } from "../../config/db.js";
 
 export const handleCreateOrder = async (req: Request, res: Response) => {
   try {

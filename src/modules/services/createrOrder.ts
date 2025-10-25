@@ -1,5 +1,5 @@
-import { prisma } from "../../config/db";
-import { OrderInput } from "../interfaces/types";
+import { prisma } from "../../config/db.js";
+import { OrderInput } from "../interfaces/types.js";
 
 export const createOrder = async (data: OrderInput) => {
   const totalBeforeDiscount = data.items.reduce(
