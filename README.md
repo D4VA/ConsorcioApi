@@ -1,4 +1,4 @@
-# ConsorcioApp
+# ConsorcioApi
 
 Es una pequeña aplicación desarrollada usando Node, Express y TypeScript
 
