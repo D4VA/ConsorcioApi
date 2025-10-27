@@ -108,7 +108,7 @@ Devuelve un listado de todas las órdenes registradas en el sistema.
 Devuelve los detalles completos de una orden específica, incluyendo los ítems comprados
 Ejemplo:
     ```
-    GET /api/order/39
+        GET /api/order/39
     ```
     
 | Nombre | Tipo     | Requerido | Descripción                |
