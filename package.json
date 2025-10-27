@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-"scripts": {
-  "build": "prisma generate && tsc",
-  "start": "node dist/index.js"
-},
+  "scripts": {
+    "build": "prisma generate && tsc",
+    "start": "node dist/index.js"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Dav",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
