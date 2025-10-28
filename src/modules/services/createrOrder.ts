@@ -20,11 +20,11 @@ export const createOrder = async (data: OrderInput) => {
       if (coupon.type === "GLOBAL") {
         totalDiscount = (totalBeforeDiscount * DiscountValue) / 100;
       } else if (coupon.type === "PRODUCT") {
-        data.items.forEach((item) => {
-          const itemDiscount =
-            (item.price * item.quantity * DiscountValue) / 100;
-          totalDiscount += itemDiscount;
-        });
+        const firstItem = data.items[0];
+        if (firstItem) {
+          totalDiscount =
+            (firstItem.price * firstItem.quantity * DiscountValue) / 100;
+        }
       }
     }
   }
