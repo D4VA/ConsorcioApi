@@ -15,7 +15,6 @@ export const handleCreateOrder = async (req: Request, res: Response) => {
 
     const order = await createOrder(data);
 
-    // Retornar solo los totales que tu front necesita
     return res.status(201).json({
       totalBeforeDiscount: order.totalBeforeDiscount,
       totalDiscount: order.totalDiscount,
